@@ -33,13 +33,14 @@ export default function Maintenance() {
             sx={{
               color: '#637381',
             }}
+            data-cy="sub-title"
           >
             We are currently working hard on this page!
           </Typography>
         </Box>
         <Box>
           <Image
-            src={maintenanceImage}
+            src={require('../../images/maintenance.png')}
             objectFit="contain"
             alt="maintenance-image"
             width={350}
