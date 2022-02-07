@@ -44,3 +44,7 @@ yarn-error.log*
 
 #.env
 .env
+
+#cypress
+cypress/screenshots
+cypress/videos

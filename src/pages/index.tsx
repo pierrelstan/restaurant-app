@@ -7,6 +7,7 @@ import type { NextPage } from 'next';
 import dbConnect from '../../server/lib/dbConnection';
 import Post from '../../server/models/Post';
 import Maintenance from '../components/Maintenance';
+import image from '../../images/maintenance.png';
 
 interface PetProps {
   _id: string;
@@ -23,7 +24,7 @@ interface PetProps {
 const Home: NextPage<PetProps> = ({ posts }: any) => {
   return (
     <Container maxWidth="lg">
-      <Maintenance />
+      <Maintenance image={image} />
       <>
         {posts.map(
           (post: {

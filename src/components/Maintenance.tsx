@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { Box, Typography, Container } from '@mui/material';
 import Image from 'next/image';
-import maintenanceImage from '../../images/maintenance.png';
 
-export default function Maintenance() {
+type maintenanceProps = any;
+
+export default function Maintenance({ image }: maintenanceProps) {
   return (
     <Container maxWidth="lg">
       <Box
@@ -40,7 +41,7 @@ export default function Maintenance() {
         </Box>
         <Box>
           <Image
-            src={require('../../images/maintenance.png')}
+            src={image}
             objectFit="contain"
             alt="maintenance-image"
             width={350}

@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "start-server-and-test start http://localhost:3000 cy:run",
+    "test": "cypress run",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "cypress:c": "npx cypress open-ct",
