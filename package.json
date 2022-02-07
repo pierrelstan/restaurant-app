@@ -9,7 +9,8 @@
     "test": "start-server-and-test start http://localhost:3030 cy:run",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "ci": "yarn install --immutable --immutable-cache --check-cache"
   },
   "husky": {
     "hooks": {
