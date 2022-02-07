@@ -28,7 +28,9 @@
     "**/*.tsx",
     "commitlint.config.js",
     "eslintrc.js",
-    "server/lib/dbConnection.ts"
+    "server/lib/dbConnection.ts",
+    "cypress/plugins/index.js",
+    "webpack.config.js"
   ],
   "exclude": ["node_modules"]
 }
