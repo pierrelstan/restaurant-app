@@ -18,14 +18,17 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": ["cypress"]
+    "types": ["cypress"],
+    "declaration": true
   },
   "include": [
     "next-env.d.ts",
+    "utility/global.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "commitlint.config.js",
-    "eslintrc.js"
+    "eslintrc.js",
+    "server/lib/dbConnection.ts"
   ],
   "exclude": ["node_modules"]
 }
