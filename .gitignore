@@ -35,3 +35,16 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+#history
+.history
+
+#vscode
+.vscode
+
+#.env
+.env
+
+#cypress
+cypress/screenshots
+cypress/videos

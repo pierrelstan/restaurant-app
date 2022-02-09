@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+env:
+  project-directory: ./
+  MONGODB_URI: ${{ secrets.MONGODB_URI }}
+
+jobs:
+  test:
+    name: Run all tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+
+      - name: yarn install
+        run: yarn ci
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Typescript compiles
+        run:
+          yarn build
+
+          # Install and cache NPM dependencies, run integration tests
+      - name: Cypress E2E (Dev Server) 🧪
+        uses: cypress-io/github-action@v2
+        with:
+          # run these before testing
+          start: |
+            yarn dev
+          # wait for server to be ready
+          wait-on: 'http://localhost:3000'
+          env: branch-name=${{ github.head_ref }}
+
+      - name: Run Component tests 🧪
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          command: yarn cypress run-ct
+
+      - name: run integration test
+        run: yarn test

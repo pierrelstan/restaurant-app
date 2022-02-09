@@ -2,7 +2,11 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
     "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -11,10 +15,25 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "types": ["cypress", "@testing-library/cypress"],
+    "declaration": true,
+    "isolatedModules": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "utility/global.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "commitlint.config.js",
+    "eslintrc.js",
+    "server/lib/dbConnection.ts",
+    "cypress/plugins/index.js",
+    "webpack.config.js",
+    "cypress/support/index.js",
+    "cypress/support/commands.js",
+    "src/pages/404.js"
+  ],
   "exclude": ["node_modules"]
 }
