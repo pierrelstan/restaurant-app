@@ -1,6 +1,7 @@
 import createEmotionServer from '@emotion/server/create-instance';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import * as React from 'react';
+import theme from '../styles/theme/theme';
 import createEmotionCache from '../utility/createEmotionCache';
 
 export default class MyDocument extends Document {
@@ -8,9 +9,15 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          {/* PWA primary color */}
+          <meta name="theme-color" content={theme.palette.background.default} />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+          />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
           />
         </Head>
         <body>
@@ -54,15 +61,11 @@ MyDocument.getInitialProps = async (ctx) => {
   const cache = createEmotionCache();
   const { extractCriticalToChunks } = createEmotionServer(cache);
 
-  /* eslint-disable */
   ctx.renderPage = () =>
     originalRenderPage({
-      enhanceApp: (App) =>
-        function EnhanceApp(props) {
-          return <App emotionCache={cache} {...props} />;
-        },
+      // eslint-disable-next-line react/display-name
+      enhanceApp: (App) => (props) => <App emotionCache={cache} {...props} />,
     });
-  /* eslint-enable */
 
   const initialProps = await Document.getInitialProps(ctx);
   // This is important. It prevents emotion to render invalid HTML.

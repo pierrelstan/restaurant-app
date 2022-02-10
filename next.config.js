@@ -5,6 +5,7 @@ const withImages = require('next-images');
 
 const nextConfig = {
   reactStrictMode: true,
+  disableStaticImages: false,
   images: {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
   },
