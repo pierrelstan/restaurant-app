@@ -41,3 +41,10 @@ yarn-error.log*
 
 #vscode
 .vscode
+
+#.env
+.env
+
+#cypress
+cypress/screenshots
+cypress/videos

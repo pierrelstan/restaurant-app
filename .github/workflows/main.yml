@@ -6,7 +6,7 @@ on:
       - main
 env:
   project-directory: ./
-  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+  MONGODB_URI: ${{ secrets.MONGODB_URI }}
 
 jobs:
   test:
@@ -19,15 +19,15 @@ jobs:
         with:
           node-version: '16.x'
 
-      - name: yarn clean install
+      - name: yarn install
         run: yarn ci
 
-      - name: Typescript compiles
-        run: yarn build
-
       - name: Lint
+        run: yarn lint
+
+      - name: Typescript compiles
         run:
-          yarn lint
+          yarn build
 
           # Install and cache NPM dependencies, run integration tests
       - name: Cypress E2E (Dev Server) 🧪
@@ -38,6 +38,7 @@ jobs:
             yarn dev
           # wait for server to be ready
           wait-on: 'http://localhost:3000'
+          env: branch-name=${{ github.head_ref }}
 
       - name: Run Component tests 🧪
         uses: cypress-io/github-action@v2
@@ -45,5 +46,5 @@ jobs:
           install: false
           command: yarn cypress run-ct
 
-      - name: run tests
+      - name: run integration test
         run: yarn test

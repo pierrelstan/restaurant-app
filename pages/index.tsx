@@ -1,12 +1,13 @@
-import * as React from 'react';
 import { Container } from '@mui/material';
 import type { NextPage } from 'next';
-import Maintenance from '../src/components/Maintenance';
+import * as React from 'react';
+import image from '../public/static/maintenance.png';
+import Maintenance from '../src/components/Maintenance/Maintenance';
 
 const Home: NextPage = () => {
   return (
     <Container maxWidth="lg">
-      <Maintenance />
+      <Maintenance image={image} />
     </Container>
   );
 };

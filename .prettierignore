@@ -1,0 +1,5 @@
+**/.next/**
+**/dist/**
+yarn.lock
+coverage
+node_modules
