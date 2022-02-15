@@ -4,10 +4,14 @@
     "plugin:@typescript-eslint/recommended",
     "prettier" // Add "prettier" last. This will turn off eslint rules conflicting with prettier. This is not what will format our code.
   ],
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "react-hooks"],
   "rules": {
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "require-await": "error",
     "camelcase": "off",
     "prefer-const": "off",
     "import/order": [
@@ -26,6 +30,13 @@
           "caseInsensitive": false
         },
         "newlines-between": "never"
+      }
+    ],
+    // allow test files to use dev dependencies
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": ["**/*.{test,cy,spec}.tsx", "cypress/**/*"]
       }
     ]
   }
