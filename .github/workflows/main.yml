@@ -41,4 +41,4 @@ jobs:
           env: branch-name=${{ github.head_ref }}
 
       - name: run integration test
-        run: yarn test
+        run: yarn e2e
