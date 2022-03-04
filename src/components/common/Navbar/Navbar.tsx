@@ -3,8 +3,8 @@ import { AppBar, Toolbar, Button, Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Image from 'next/image';
 import React from 'react';
-import LogoSvg from '../../../public/static/logo.svg';
-import Link from '../common/Link';
+import LogoSvg from '../../../../public/static/logo.svg';
+import Link from '../Link';
 
 const Nav = styled('nav')(() => ({}));
 
