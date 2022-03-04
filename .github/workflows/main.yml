@@ -30,15 +30,12 @@ jobs:
           yarn build
 
           # Install and cache NPM dependencies, run integration tests
-      - name: Cypress E2E (Dev Server) 🧪
+      - name: Cypress integration tests 🧪
         uses: cypress-io/github-action@v2
         with:
           # run these before testing
           start: |
-            yarn dev
+            yarn cypress:headless
           # wait for server to be ready
           wait-on: 'http://localhost:3000'
           env: branch-name=${{ github.head_ref }}
-          
-      - name: run integration test
-        run: yarn e2e
