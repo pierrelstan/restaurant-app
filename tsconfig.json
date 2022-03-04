@@ -33,7 +33,8 @@
     "webpack.config.js",
     "cypress/support/index.js",
     "cypress/support/commands.js",
-    "src/pages/404.js"
+    "src/pages/404.js",
+    "next.config.js"
   ],
   "exclude": ["node_modules"]
 }

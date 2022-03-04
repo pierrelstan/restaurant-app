@@ -1,4 +1,4 @@
-import Form from '../components/Form';
+import Form from '../../components/Form';
 
 const NewPet = () => {
   const postForm = {
@@ -12,7 +12,7 @@ const NewPet = () => {
     likes: [],
     dislikes: [],
   };
-  return <Form formId="add-post-form" postForm={postForm} forNewPost={true} />;
+  return <Form formId="new-form" postForm={postForm} forNewPost={true} />;
 };
 
 export default NewPet;

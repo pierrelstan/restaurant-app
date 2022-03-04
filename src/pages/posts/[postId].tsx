@@ -12,16 +12,18 @@ import Error from '../_error';
 /* Allows you to view post card info and delete post card*/
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const PetPage = ({ post, statusCode }: any) => {
+const PostPage = ({ post, statusCode }: any) => {
   const router = useRouter();
+  console.log(router.query);
   const [message, setMessage] = useState('');
 
   const handleDelete = async () => {
-    const petID = router.query.id;
-    console.log(petID);
+    const postID = router.query.postId;
+    console.log(router.query);
+    console.log(postID);
 
     try {
-      await fetch(`/api/posts/${petID}`, {
+      await fetch(`/api/posts/${postID}`, {
         method: 'Delete',
       });
       router.push('/');
@@ -29,7 +31,7 @@ const PetPage = ({ post, statusCode }: any) => {
       setMessage('Failed to delete the post.');
     }
   };
-  if (!statusCode) {
+  if (statusCode) {
     return <Error />;
   }
   return (
@@ -41,8 +43,6 @@ const PetPage = ({ post, statusCode }: any) => {
           <div className="main-content">
             <p className="post-name">{post.name}</p>
             <p className="owner">Owner: {post.owner_name}</p>
-
-            {/* Extra Post Info: Likes and Dislikes */}
             <div className="likes info">
               <p className="label">Likes</p>
               <ul>
@@ -61,7 +61,7 @@ const PetPage = ({ post, statusCode }: any) => {
             </div>
 
             <div className="btn-container">
-              <Link href="/[id]/edit" as={`/${post._id}/edit`}>
+              <Link href="/posts/[postId]/edit" as={`/posts/${post._id}/edit`}>
                 <button className="btn edit">Edit</button>
               </Link>
               <button className="btn delete" onClick={handleDelete}>
@@ -77,15 +77,15 @@ const PetPage = ({ post, statusCode }: any) => {
 };
 
 export async function getServerSideProps({ params }: any) {
+  console.log(params);
   await dbConnect();
-
   try {
-    const post = await Post.findById(params.id).lean();
+    const post = await Post.findById(params.postId).lean();
     post._id = post._id.toString();
-    return { props: { post } };
+    return { props: { post, statusCode: false } };
   } catch (error) {
-    return { props: { statusCode: false } };
+    return { props: { statusCode: true } };
   }
 }
 
-export default PetPage;
+export default PostPage;

@@ -17,16 +17,17 @@ export default async function handler(
   }
 ) {
   const {
-    query: { id },
+    query: { postId, id },
     method,
   } = req;
-
+  console.log(postId);
+  console.log(id);
   await dbConnect();
 
   switch (method) {
     case 'GET' /* Get a model by its ID */:
       try {
-        const post = await Post.findById(id);
+        const post = await Post.findById(postId);
 
         if (!post) {
           return res.status(400).json({ success: false });
@@ -55,7 +56,7 @@ export default async function handler(
 
     case 'DELETE' /* Delete a model by its ID */:
       try {
-        const deletedPet = await Post.deleteOne({ _id: id });
+        const deletedPet = await Post.deleteOne({ _id: postId });
         if (!deletedPet) {
           return res.status(400).json({ success: false });
         }

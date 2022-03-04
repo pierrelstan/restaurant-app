@@ -1,17 +1,17 @@
 {
   "baseUrl": "http://localhost:3000",
-  "testFiles": "**/*.cy.{js,jsx,ts,tsx}",
-  "componentFolder": "src",
-  "nodeVersion": "system",
-  "integrationFolder": "cypress/tests",
-  "cypress-watch-and-reload": {
-    "watch": ["src/**"]
-  },
+  "integrationFolder": "cypress/integrations",
   "component": {
+    "componentFolder": "src",
+    "testFiles": "**/*cy.{js,jsx,ts,tsx}",
+    "cypress-watch-and-reload": {
+      "watch": ["src/**"]
+    },
     "pluginsFile": "cypress/plugins/index.js",
-    "supportFile": "cypress/support/index.js"
-  },
-  "env": {
-    "nock": false
+    "supportFile": "cypress/support/index.js",
+
+    "env": {
+      "nock": false
+    }
   }
 }

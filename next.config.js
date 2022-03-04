@@ -8,6 +8,8 @@ const nextConfig = {
   disableStaticImages: false,
   images: {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    // domains: ['res.cloudinary.com'],
+    formats: ['image/png'],
   },
 };
 
@@ -15,8 +17,12 @@ const nextConfig = {
 module.exports = [
   nextConfig,
   withImages({
-    // fileExtensions: ["jpg", "jpeg", "png", "gif"],
     webpack(config) {
+      config.module.rules.push({
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: ['@svgr/webpack'],
+      });
       return config;
     },
   }),
