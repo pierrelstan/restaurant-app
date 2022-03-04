@@ -35,7 +35,7 @@ jobs:
         with:
           # run these before testing
           start: |
-            yarn cypress:headless
+            yarn start
           # wait for server to be ready
           wait-on: 'http://localhost:3000'
           env: branch-name=${{ github.head_ref }}
