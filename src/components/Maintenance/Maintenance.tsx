@@ -4,8 +4,14 @@ import * as React from 'react';
 import { maintenanceProps } from '../../types/types';
 
 export default function Maintenance({ image }: maintenanceProps) {
+  console.log(image);
   return (
-    <Container maxWidth="lg">
+    <Container
+      maxWidth="lg"
+      sx={{
+        backgroundColor: 'background.default',
+      }}
+    >
       <Box
         sx={{
           display: 'flex',
