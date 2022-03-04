@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // ***********************************************************
 // This example support/index.js is processed and
 // loaded automatically before your test files.
@@ -26,3 +27,7 @@ WebFont.load({
     families: ['Lato', 'Montserrat'],
   },
 });
+
+// beforeEach(() => {
+//   cy.log('I run before every test in every spec file!!!!!!');
+// });
