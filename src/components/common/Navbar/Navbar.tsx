@@ -6,11 +6,20 @@ import React from 'react';
 import Nav from './Nav';
 import NavList from './NavList';
 import LogoSvg from '../../../../public/static/logo.svg';
+import TemporaryDrawer from '../TemporaryDrawer/TemporaryDrawer';
 
-const DisplayHeader = styled('div')(({ theme }) => ({
+const IsHeaderDisplay = styled('div')(({ theme }) => ({
   display: 'none',
   [theme.breakpoints.up('md')]: {
     display: 'block',
+  },
+}));
+
+const IsTemporaryDrawer = styled('div')(({ theme }) => ({
+  display: 'block',
+  margin: '10px',
+  [theme.breakpoints.up('md')]: {
+    display: 'none',
   },
 }));
 
@@ -35,7 +44,7 @@ export default function Navbar() {
           color: 'primary.main',
         }}
       >
-        <DisplayHeader>
+        <IsHeaderDisplay>
           <Toolbar sx={{ flexWrap: 'wrap', flexGrow: 1 }}>
             <Logo sx={{ flexGrow: 1 }}>
               <Image
@@ -49,7 +58,7 @@ export default function Navbar() {
             <Nav>
               <NavList />
               <Button
-                href="/login/login"
+                href="/login"
                 variant="outlined"
                 sx={{ my: 1, mx: 1.4, fontSize: [4, 16], width: 'auto' }}
               >
@@ -57,7 +66,10 @@ export default function Navbar() {
               </Button>
             </Nav>
           </Toolbar>
-        </DisplayHeader>
+        </IsHeaderDisplay>
+        <IsTemporaryDrawer>
+          <TemporaryDrawer />
+        </IsTemporaryDrawer>
       </AppBar>
     </>
   );
