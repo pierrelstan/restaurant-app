@@ -26,7 +26,7 @@ export default function NavList() {
       <StyledLink
         variant="button"
         color="primary.main"
-        href="/menu/menu"
+        href="/menu"
         sx={{
           fontSize: [4, 16],
         }}
@@ -36,7 +36,7 @@ export default function NavList() {
       <StyledLink
         variant="button"
         color="primary.main"
-        href="/about/about"
+        href="/about"
         sx={{
           fontSize: [4, 16],
         }}
@@ -46,7 +46,7 @@ export default function NavList() {
       <StyledLink
         variant="button"
         color="primary.main"
-        href="/story/story"
+        href="/story"
         sx={{
           fontSize: [4, 16],
         }}
@@ -56,7 +56,7 @@ export default function NavList() {
       <StyledLink
         variant="button"
         color="primary.main"
-        href="/blog/blog"
+        href="/blog"
         sx={{
           fontSize: [4, 16],
         }}
@@ -66,7 +66,7 @@ export default function NavList() {
       <StyledLink
         variant="button"
         color="primary.main"
-        href="/contact/contact"
+        href="/contact"
         sx={{
           fontSize: [4, 16],
         }}
