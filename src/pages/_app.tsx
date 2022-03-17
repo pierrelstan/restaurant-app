@@ -5,7 +5,7 @@ import theme from '../../styles/theme/theme';
 import 'normalize.css/normalize.css';
 import createEmotionCache from '../../utility/createEmotionCache';
 import '../../styles/globals.css';
-import Layout from '../components/Layout/Layout';
+import Layout from '../components/common/Layout/Layout';
 
 const clientSideEmotionCache = createEmotionCache();
 

@@ -14,3 +14,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
+  flex-direction:row !important;
+}
