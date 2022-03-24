@@ -5,8 +5,8 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import dbConnect from '../../../server/lib/dbConnection';
-import Post from '../../../server/models/Post';
+import dbConnect from '@server/lib/dbConnection';
+import Post from '@server/models/Post';
 import Error from '../_error';
 
 /* Allows you to view post card info and delete post card*/

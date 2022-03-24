@@ -2,7 +2,7 @@
 import { Container } from '@mui/material';
 import type { NextPage } from 'next';
 import React from 'react';
-import image from '../../public/static/maintenance.png';
+import image from '@public/static/maintenance.png';
 // import dbConnect from '../../server/lib/dbConnection';
 // import Post from '../../server/models/Post';
 import Maintenance from '../components/Maintenance/Maintenance';
