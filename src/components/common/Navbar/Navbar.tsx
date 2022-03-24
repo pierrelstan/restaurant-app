@@ -3,9 +3,9 @@ import { AppBar, Toolbar, Button, Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Image from 'next/image';
 import React from 'react';
+import LogoSvg from '@public/static/logo.svg';
 import Nav from './Nav';
 import NavList from './NavList';
-import LogoSvg from '../../../../public/static/logo.svg';
 import TemporaryDrawer from '../TemporaryDrawer/TemporaryDrawer';
 
 const IsHeaderDisplay = styled('div')(({ theme }) => ({

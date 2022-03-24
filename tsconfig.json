@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "noImplicitAny": true,
@@ -19,13 +20,25 @@
     "incremental": true,
     "types": ["cypress", "@testing-library/cypress"],
     "declaration": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@utility/*": ["utility/*"],
+      "@public/*": ["public/*"],
+      "@types/*": ["src/types/*"],
+      "@server/*": ["server/*"],
+      "@styles/*": ["styles/*"],
+      "@theme/*": ["styles/theme/*"]
+    }
   },
+
   "include": [
     "next-env.d.ts",
     "utility/global.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "pages/**/*",
+    "src/**/*",
     "commitlint.config.js",
     "eslintrc.js",
     "server/lib/dbConnection.ts",

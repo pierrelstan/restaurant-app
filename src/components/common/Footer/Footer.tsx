@@ -3,10 +3,10 @@ import { Box, Container, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Image from 'next/image';
 import React from 'react';
-import Facebook from '../../../../public/static/facebook.png';
-import Instagram from '../../../../public/static/instagram.png';
-import Linkedin from '../../../../public/static/linkedin.png';
-import Twitter from '../../../../public/static/twitter.png';
+import Facebook from '@public/static/facebook.png';
+import Instagram from '@public/static/instagram.png';
+import Linkedin from '@public/static/linkedin.png';
+import Twitter from '@public/static/twitter.png';
 import Link from '../Link';
 
 const StyledLink = styled(Link)(() => ({

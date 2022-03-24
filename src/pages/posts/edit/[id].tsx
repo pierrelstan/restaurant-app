@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 import useSWR from 'swr';
-import Form from '../../../components/Form';
+import Form from '@components/Form';
 
 const fetcher = (url: RequestInfo) =>
   fetch(url)
